@@ -1,0 +1,58 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   resolve_sudoku.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/11 14:07:52 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/11 16:29:58 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+char	find_number(int x, int y)
+{
+	char	ret;
+
+	ret = '1';
+	while (ret <= '9')
+	{
+		if (check_ligne(y) + check_column(x) + check_square(y, x) == 3)
+		{
+			
+		}
+		ret++;
+	}
+	return ('\0');
+}
+
+char	**resolve_sudoku(char **argv, int argc)
+{
+	int		y;
+	int 	x;
+
+	y = 1;
+	while (y <= 9)
+	{
+		x = 1;
+		while (x <= 9)
+		{
+			if (tab[y][x] == '.')
+			{
+				if (find_number(y, x) != '\0')
+				{
+					tab[y][x] = find_number(y, x);
+				}
+				else
+				{
+					y = 1;
+					x = 0;
+				}
+			}
+			x++;
+		}
+		y++;
+	}
+}

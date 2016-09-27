@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/02 16:18:12 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/02 16:28:07 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putnbr(int nb);
+
+void	ft_putchar(char c);
+
+int		ft_sqrt(int nb);
+
+int		main(void)
+{
+	ft_putnbr(ft_sqrt(1));
+	ft_putchar('\n');
+	ft_putnbr(ft_sqrt(-6));
+	ft_putchar('\n');
+	ft_putnbr(ft_sqrt(9));
+	ft_putchar('\n');
+	ft_putnbr(ft_sqrt(8));
+	return (0);
+}

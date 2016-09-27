@@ -1,0 +1,6 @@
+Credentials cache: API:30022D90-A5E1-4DA3-951C-B78F52EAD134
+        Principal: efichot@42.FR
+
+  Issued                Expires               Principal
+Aug 29 16:06:50 2016  Sep  5 16:06:50 2016  krbtgt/42.FR@42.FR
+Aug 29 16:09:10 2016  Sep  5 16:06:50 2016  host/vgs-fn1.42.fr@42.FR

@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/05 11:44:49 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/05 16:44:19 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_match(char *str, int i, int j, int k)
+{
+	k = i - j;
+	i = 0;
+	while (str[i])
+	{
+		str[i] = str[k];
+		i++;
+		k++;
+	}
+	return (str);
+}
+
+char	*ft_strstr(char *str, char *to_find)
+{
+	int		j;
+	int		i;
+	int		k;
+
+	k = 0;
+	while (to_find[k])
+		k++;
+	if (to_find[0] == '\0')
+		return (str);
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (to_find[j] == str[i])
+		{
+			if (j == k - 1)
+				return (ft_match(str, i, j, k));
+			j++;
+			i++;
+		}
+		i = i - j;
+		i++;
+	}
+	return (0);
+}

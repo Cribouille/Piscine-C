@@ -1,0 +1,11 @@
+void ft_swap(int *a, int*b);
+int main()
+{
+  int i;
+  int j;
+
+  i = 2;
+  j = 5;
+  ft_swap(&i, &j);
+  return (0);
+}

@@ -1,0 +1,23 @@
+#include <unistd.h>
+
+void print_bits(unsigned char octet)
+{
+  int nb;
+  char bits[8];
+  int i;
+
+  nb = octet;
+  i = 0;
+  while (i < 8)
+    {
+      bits[i] = nb % 2;
+      nb = nb / 2;
+      i++;
+    }
+  count--;
+  while (count >= 0)
+    {
+      write(1, &bits[i], 1);
+      count--;
+    }
+}

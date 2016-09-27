@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_takes_place.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/09 10:33:11 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/09 10:48:01 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+ 
+void    ft_takes_place(int hour)
+{
+	char  *following;
+
+	following = "THE FOLLOWING TAKES PLACE BETWEEN";
+	if (hour < 11 && hour > 0)
+		printf("%s %d.00 A.M. AND %d.00 A.M.\n", following, (hour % 12),
+			 ((hour + 1) % 12));
+	else if (hour > 12 && hour < 23)
+		printf("%s %d.00 P.M. AND %d.00 P.M.\n", following, (hour % 12),
+				   ((hour + 1) % 12));
+	else if (hour == 11)
+		printf("%s 11.00 A.M. AND 12.00 P.M.\n", following);
+	else if (hour == 23)
+		printf("%s 11.00 P.M. AND 12.00 A.M.\n", following);	
+	else if (hour == 0)
+		printf("%s 12.00 A.M. AND 1.00 A.M.\n", following);
+	else if (hour == 12)
+		printf("%s 12.00 P.M. AND 1.00 P.M.\n", following);
+}

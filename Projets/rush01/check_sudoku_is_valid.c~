@@ -1,0 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_sudoku_is_valid.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/11 11:16:37 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/11 11:22:54 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+
+int		ft_strlen(char *str)
+{
+	int		len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+int		check_sudoku_is_valid(char *str, char *str2, char *str3, char *str4, char *str5, char *str6, char *str7, char *str8, char *str9)
+{
+	
+}

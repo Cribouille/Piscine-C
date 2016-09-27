@@ -1,0 +1,41 @@
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+  write(1, &c, 1);
+}
+
+int main(int ac, char **av)
+{
+  int len;
+
+  len = 0;
+  if (ac != 2)
+    {
+      ft_putchar('\n');
+    }
+  else
+    {
+      while (av[1][len])
+	len++;
+      while (av[1][len] == ' ' || av[1][len] == '\t' || av[1][len] == '\0')
+	{
+	  len--;
+	  if (len == 0)
+	    {
+	      ft_putchar('\n');
+	      return (0);
+	    }
+	}
+      while (av[1][len] != ' ' && av[1][len] != '\t')
+	len--;
+      len++;
+      while (av[1][len] != ' ' && av[1][len] != '\t' && av[1][len] != '\0')
+	{
+	  ft_putchar(av[1][len]);
+	  len++;
+	}
+      ft_putchar('\n');
+    }
+  return (0);
+}

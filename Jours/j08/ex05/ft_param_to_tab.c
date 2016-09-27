@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_param_to_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 18:04:46 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/08 21:21:40 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_stock_par.h"
+
+int						ft_strlen(char *str)
+{
+	int		len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+char					*ft_strdup(char *str)
+{
+	char	*ret;
+	int		i;
+
+	ret = (char*)malloc(sizeof(*ret) * ft_strlen(str) + 1);
+	i = 0;
+	while (str[i])
+	{
+		ret[i] = str[i];
+		i++;
+	}
+	ret[i] = '\0';
+	return (ret);
+}
+
+struct	s_stock_par		*ft_param_to_tab(int ac, char **av)
+{
+	int				i;
+	t_stock_par		*ret;
+	t_stock_par		arg;
+	t_stock_par		argf;
+
+	i = 0;
+	ret = (t_stock_par*)malloc(sizeof(*ret) * ac);
+	while (i < ac)
+	{
+		arg.size_param = ft_strlen(av[i]);
+		arg.str = av[i];
+		arg.copy = ft_strdup(av[i]);
+		arg.tab = ft_split_whitespaces(av[i]);
+		ret[i] = arg;
+		i++;
+	}
+	argf.str = 0;
+	ret[ac] = argf;
+	return (ret);
+}

@@ -1,0 +1,31 @@
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: efichot <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/09/12 10:32:49 by efichot           #+#    #+#              #
+#    Updated: 2016/09/12 14:01:42 by efichot          ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+
+NAME = libft.a
+SOURCES = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c\
+ ./srcs/ft_strlen.c ./srcs/ft_swap.c
+OBJECTS = ./ft_putchar.o ./ft_putstr.o ./ft_strcmp.o ./ft_strlen.o ./ft_swap.o
+
+all: $(NAME)
+
+$(NAME):
+	gcc -c $(SOURCES) -I./includes
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
+
+clean:
+	rm  -f $(OBJECTS)
+
+fclean: clean
+	rm -f libft.a
+
+re: fclean all

@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/07 12:10:21 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/08 11:05:45 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+int		ft_ultimate_range(int **range, int min, int max)
+{
+	int		diff;
+	int		i;
+	int		j;
+
+	if (min >= max)
+		return (0);
+	diff = max - min;
+	i = 0;
+	j = 0;
+	if (range)
+	{
+		while (i < 1)
+		{
+			range[i] = (int*)malloc(sizeof(**range) * diff);
+			while (min < max)
+			{
+				range[i][j] = min;
+				min++;
+				j++;
+			}
+			i++;
+		}
+		return (diff);
+	}
+	return (0);
+}

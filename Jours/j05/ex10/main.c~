@@ -1,0 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efichot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/05 17:22:56 by efichot           #+#    #+#             */
+/*   Updated: 2016/09/06 09:47:48 by efichot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strcapitalize(char *str);
+
+void	ft_putstr(char *str);
+
+int		main(void)
+{
+	char str[100] = "salut, comMent tu vas ? 42mots quarante-deux; cinquante+et+un";
+	ft_putstr(ft_strcapitalize(str));
+	return (0);
+}
